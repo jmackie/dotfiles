@@ -1,0 +1,73 @@
+format = """
+$username\
+$hostname\
+$directory\
+$shlvl\
+$nix_shell\
+$git_branch\
+$git_state\
+$git_status\
+$env_var\
+$line_break\
+$jobs\
+$character"""
+
+add_newline = false
+
+[username]
+style_user = "cyan bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname](cyan bold) "
+trim_at = ".lan"
+disabled = false
+
+[directory]
+style = "black bold"
+truncate_to_repo = false
+disabled = false
+
+[shlvl]
+threshold = 3
+format = '[\$$shlvl]($style) '
+style = "white"
+disabled = true
+
+[nix_shell]
+format = "[λ]($style) "
+disabled = false
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+disabled = false
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+# Symbols like __git_ps1
+modified = "*"
+ahead = ">"
+behind = "<"
+diverged = "<>"
+style = "yellow bold"
+disabled = false
+
+[jobs]
+format = '[\($number\)]($style) '
+style = "black bold"
+number_threshold = 1
+disabled = false
+
+[character]
+success_symbol = "[❯](cyan bold)"
+error_symbol = "[❯](red bold)"
+vicmd_symbol = "[❮](cyan bold)"
+
+[env_var]
+variable = "IN_BROOT"
+format = "[\\(broot\\)]($style)"
+style = "blue bold"
