@@ -7,6 +7,7 @@
     initExtra = ''
       alias -s {js,json,env,md,html,css,toml}=bat
       set -o vi
+      unsetopt BEEP
     '';
 
     shellGlobalAliases = {
