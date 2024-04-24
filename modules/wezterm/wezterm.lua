@@ -31,6 +31,9 @@ config.keys = {
 	{ key = "K", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
 	{ key = "H", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
 	{ key = "L", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
+	-- tab navigation
+	{ key = "h", mods = "SUPER", action = act.ActivateTabRelative(-1) },
+	{ key = "l", mods = "SUPER", action = act.ActivateTabRelative(1) },
 }
 
 return config
