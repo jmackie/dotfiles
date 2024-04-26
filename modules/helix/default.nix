@@ -10,8 +10,19 @@
       nodePackages.bash-language-server
       marksman
     ];
+    themes = {
+      jmackie_dark = {
+        inherits = "dark_plus";
+        "ui.background" = { }; # transparent
+      };
+      jmackie_light = {
+        inherits = "solarized_light";
+      };
+    };
     settings = {
-      theme = "dark_plus_transparent"; # custom theme, defined below
+      # NOTE: the adaptive theme (file) gets created and updated by wezterm in response 
+      # to system dark/light colour scheme changes
+      theme = "adaptive";
       editor = {
         mouse = false;
         cursorline = true;
@@ -32,12 +43,6 @@
           # CTRL+S to save because it's a habit I can't seem to shake
           C-s = [ ":write" "normal_mode" ];
         };
-      };
-    };
-    themes = {
-      dark_plus_transparent = {
-        inherits = "dark_plus";
-        "ui.background" = { };
       };
     };
   };
