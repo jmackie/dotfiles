@@ -24,9 +24,10 @@
     pkgs.wezterm
   ];
 
-  environment.variables = {
+  environment.variables = rec {
     SHELL = "${pkgs.zsh}/bin/zsh";
     EDITOR = "${pkgs.helix}/bin/hx";
+    VISUAL = EDITOR;
     PAGER = "less -S";
   };
 
