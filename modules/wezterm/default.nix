@@ -10,7 +10,7 @@ let
   '';
   # nn because it's smaller than nnn, get it?
   nn = pkgs.writeShellScriptBin "nn" ''
-    wezterm cli split-pane --left --percent 20 ${lib.getExe nnn-wrapped}
+    pane_id=$(wezterm cli split-pane --left --percent 20 ${lib.getExe nnn-wrapped})
   '';
 in
 {
