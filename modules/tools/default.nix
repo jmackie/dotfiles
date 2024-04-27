@@ -5,7 +5,6 @@
     sd
     ripgrep
     tldr
-    tree
     entr
     curl
     httpie

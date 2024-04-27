@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -31,6 +31,7 @@
     shellAliases = {
       rm = "rm -vi";
       grep = "grep --color";
+      tree = "${lib.getExe pkgs.broot} -c :pt";
 
       # git things
       gch = "git checkout \"$(git branch --sort=-committerdate | fzf | tr -d '[:space:]')\"";
