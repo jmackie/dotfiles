@@ -1,17 +1,21 @@
 { pkgs, ... }:
 let
-  hx-split = pkgs.callPackage ../../scripts/hx-split { };
   nnn = pkgs.nnn.override ({ withNerdIcons = true; });
-  nnn-wrapped = pkgs.symlinkJoin {
-    name = "nnn-wrapped";
-    paths = [ nnn ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = "wrapProgram $out/bin/nnn --set NNN_OPENER ${hx-split}/bin/hx-split";
-  };
+  plugins-src = (pkgs.fetchFromGitHub {
+    owner = "jarun";
+    repo = "nnn";
+    rev = "v4.9";
+    sha256 = "sha256-Hpc8YaJeAzJoEi7aJ6DntH2VLkoR6ToP6tPYn3llR7k=";
+  }) + "/plugins";
 in
 {
   programs.nnn = {
     enable = true;
-    package = nnn-wrapped;
+    package = nnn;
+    plugins.src = plugins-src;
+    plugins.mappings = {
+      f = "fzcd";
+      r = "gitroot";
+    };
   };
 }

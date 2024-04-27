@@ -1,4 +1,4 @@
-{ pkgs, rev, ... }: {
+{ pkgs, lib, rev, ... }: {
   nix.package = pkgs.nixVersions.nix_2_21; # pin nix version!
   nix.settings.substituters = [
     "https://cache.nixos.org/"
@@ -25,8 +25,8 @@
   ];
 
   environment.variables = rec {
-    SHELL = "${pkgs.zsh}/bin/zsh";
-    EDITOR = "${pkgs.helix}/bin/hx";
+    SHELL = lib.getExe pkgs.zsh;
+    EDITOR = lib.getExe pkgs.helix;
     VISUAL = EDITOR;
     PAGER = "less -S";
   };

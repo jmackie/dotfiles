@@ -28,7 +28,7 @@
       setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
     '';
 
-    shellGlobalAliases = {
+    shellAliases = {
       rm = "rm -vi";
       grep = "grep --color";
 
