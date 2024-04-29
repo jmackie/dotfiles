@@ -10,6 +10,7 @@
       nodePackages.bash-language-server
       marksman
     ];
+    defaultEditor = true; # set $EDITOR
     themes = {
       jmackie_dark = {
         inherits = "dark_plus";

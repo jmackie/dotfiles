@@ -24,13 +24,6 @@
     pkgs.wezterm
   ];
 
-  environment.variables = rec {
-    SHELL = lib.getExe pkgs.zsh;
-    EDITOR = lib.getExe pkgs.helix;
-    VISUAL = EDITOR;
-    PAGER = "less -S";
-  };
-
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
 
