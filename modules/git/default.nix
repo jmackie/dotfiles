@@ -21,12 +21,6 @@
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/github_id_ed25519.pub";
-
-      "color \"status\"" = {
-        added = "green bold";
-        changed = "yellow bold";
-        untracked = "red bold";
-      };
     };
   };
 }
