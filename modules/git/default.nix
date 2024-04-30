@@ -4,7 +4,7 @@
     enable = true;
     userName = "Jordan Mackie";
     userEmail = "12185627+jmackie@users.noreply.github.com";
-    difftastic.enable = true;
+    delta.enable = true;
     lfs.enable = true;
     ignores = [ ".helix" ];
     aliases = {
