@@ -4,9 +4,7 @@ let
   nnn-wrapped = pkgs.writeShellScriptBin "nnn-wrapped" ''
     export EDITOR=${lib.getExe hx-split}
     export VISUAL=$EDITOR
-    export PATH="$HOME/.config/nnn/plugins:$PATH"
-    export NNN_OPENER=nuke
-    exec -a "$0" nnn -c "$@"
+    exec -a "$0" nnn "$@"
   '';
   # nn because it's smaller than nnn, get it?
   nn = pkgs.writeShellScriptBin "nn" ''
