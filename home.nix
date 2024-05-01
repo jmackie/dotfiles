@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   home.stateVersion = "23.11";
   imports = [
     ./modules/eza
@@ -10,6 +10,7 @@
     ./modules/tools
     ./modules/usql
     ./modules/wezterm
+    ./modules/zoxide
     ./modules/zsh
   ];
   home.sessionVariables = {
