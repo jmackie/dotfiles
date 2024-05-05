@@ -1,0 +1,23 @@
+# NOTE: the "adaptive" theme file gets created and updated by wezterm in response
+# to system dark/light colour scheme changes
+theme = "adaptive"
+
+[editor]
+auto-format = true
+cursorline = true
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.insert]
+# Unreakable CTRL+S saving habit
+C-s = [":write", "normal_mode"]
+
+[keys.normal]
+# Unreakable CTRL+S saving habit
+C-s = ":write"
+# vim habit
+G = "goto_file_end"

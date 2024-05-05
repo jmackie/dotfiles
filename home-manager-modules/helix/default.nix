@@ -20,31 +20,6 @@
         inherits = "solarized_light";
       };
     };
-    settings = {
-      # NOTE: the adaptive theme (file) gets created and updated by wezterm in response 
-      # to system dark/light colour scheme changes
-      theme = "adaptive";
-      editor = {
-        mouse = false;
-        cursorline = true;
-        auto-format = true;
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-      };
-      keys = {
-        normal = {
-          # CTRL+S to save because it's a habit I can't seem to shake
-          C-s = ":write";
-          G = "goto_file_end";
-        };
-        insert = {
-          # CTRL+S to save because it's a habit I can't seem to shake
-          C-s = [ ":write" "normal_mode" ];
-        };
-      };
-    };
   };
+  xdg.configFile."helix/config.toml".text = builtins.readFile ./config.toml;
 }

@@ -19,6 +19,8 @@ in
       r = "gitroot";
     };
   };
+  # Would be nice to bake these into the wrapped `nnn` but `programs.nnn`
+  # doesn't make that easy
   home.sessionVariables = {
     NNN_OPENER = lib.getExe nuke;
     NNN_OPTS = "c";
