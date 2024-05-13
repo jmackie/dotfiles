@@ -8,6 +8,7 @@
       nodePackages.vscode-langservers-extracted
       nodePackages.typescript-language-server
       nodePackages.bash-language-server
+      nodePackages.graphql-language-service-cli
       marksman
     ];
     defaultEditor = true; # set $EDITOR
