@@ -4,7 +4,7 @@ theme = "adaptive"
 
 [editor]
 auto-format = true
-cursorline = true
+cursorline = false
 mouse = false
 
 [editor.cursor-shape]
