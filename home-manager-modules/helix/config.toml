@@ -6,11 +6,15 @@ theme = "adaptive"
 auto-format = true
 cursorline = false
 mouse = false
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [keys.insert]
 # Unreakable CTRL+S saving habit
