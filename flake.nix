@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, systems, nix-darwin, home-manager, treefmt-nix }:
     {
-      darwinConfigurations.jmackie = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.Jordans-MacBook-Pro = nix-darwin.lib.darwinSystem {
         specialArgs = {
           rev = self.rev or self.dirtyRev or null;
         };
