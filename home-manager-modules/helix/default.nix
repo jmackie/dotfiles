@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, helix, ... }:
 {
   programs.helix = {
     enable = true;
+    package = helix;
     # Bake in some useful language servers
     extraPackages = with pkgs; [
       nil # Nix language server!
