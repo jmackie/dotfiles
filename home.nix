@@ -10,6 +10,7 @@
     ./home-manager-modules/tools
     ./home-manager-modules/usql
     ./home-manager-modules/wezterm
+    ./home-manager-modules/yazi
     ./home-manager-modules/zoxide
     ./home-manager-modules/zsh
   ];

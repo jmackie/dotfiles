@@ -1,4 +1,4 @@
-{ pkgs, lib, rev, ... }: {
+{ pkgs, rev, ... }: {
   nix.package = pkgs.nixVersions.nix_2_21; # pin nix version!
   nix.settings.substituters = [
     "https://cache.nixos.org/"

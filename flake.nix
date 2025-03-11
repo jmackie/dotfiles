@@ -9,9 +9,11 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
+    yazi.url = "github:sxyazi/yazi";
+    yazi.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, systems, nix-darwin, home-manager, treefmt-nix, helix }:
+  outputs = { self, nixpkgs, systems, nix-darwin, home-manager, treefmt-nix, helix, yazi }:
     {
       darwinConfigurations.Jordans-MacBook-Pro = nix-darwin.lib.darwinSystem {
         specialArgs = {
@@ -28,8 +30,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.jmackie = import ./home.nix;
             home-manager.extraSpecialArgs = {
-              helix = helix.packages.aarch64-darwin.helix;
               # arguments passed to home.nix
+              helix = helix.packages.aarch64-darwin.helix;
+              yazi = yazi.packages.aarch64-darwin.yazi;
             };
           }
         ];
