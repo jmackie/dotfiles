@@ -26,6 +26,16 @@
       setopt APPEND_HISTORY        # append to history file (Default)
       setopt HIST_NO_STORE         # Don't store history commands
       setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
+
+      # https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+      function y() {
+    	  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    	  yazi "$@" --cwd-file="$tmp"
+    	  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    	  	builtin cd -- "$cwd"
+    	  fi
+    	  rm -f -- "$tmp"
+      }
     '';
 
     shellAliases = {

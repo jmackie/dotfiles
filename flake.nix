@@ -8,7 +8,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix";
-    helix.inputs.nixpkgs.follows = "nixpkgs";
+    # helix.inputs.nixpkgs.follows = "nixpkgs";
     yazi.url = "github:sxyazi/yazi";
     yazi.inputs.nixpkgs.follows = "nixpkgs";
   };
