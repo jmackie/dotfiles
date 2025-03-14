@@ -15,7 +15,7 @@
     ./home-manager-modules/zsh
   ];
   home.sessionVariables = {
-    PAGER = "less -S";
+    PAGER = "less -SR";
     # NOTE: I'm not sure if it's bad to have $SHELL not be an absolute path
     # but this way we make sure that $SHELL invokes whatever ends up highest in $PATH...
     SHELL = "zsh";
