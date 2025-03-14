@@ -1,9 +1,14 @@
 { ... }:
+
+let
+    name = "Jordan Mackie";
+    email = "12185627+jmackie@users.noreply.github.com";
+in
 {
   programs.git = {
     enable = true;
-    userName = "Jordan Mackie";
-    userEmail = "12185627+jmackie@users.noreply.github.com";
+    userName = name;
+    userEmail = email;
     delta.enable = true;
     lfs.enable = true;
     ignores = [ ".helix" ];
@@ -22,5 +27,9 @@
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/github_id_ed25519.pub";
     };
+  };
+  programs.jujutsu = {
+    enable = true;
+    settings.user = { inherit name email; };
   };
 }
