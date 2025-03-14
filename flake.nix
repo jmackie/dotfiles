@@ -1,16 +1,16 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # home-manager.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix";
     # helix.inputs.nixpkgs.follows = "nixpkgs";
     yazi.url = "github:sxyazi/yazi";
-    yazi.inputs.nixpkgs.follows = "nixpkgs";
+    # yazi.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, systems, nix-darwin, home-manager, treefmt-nix, helix, yazi }:
