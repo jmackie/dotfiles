@@ -1,0 +1,45 @@
+eval "$(~/.local/bin/mise activate zsh)"
+eval "$(starship init zsh)"
+source <(fzf --zsh)
+
+export EDITOR=hx
+
+# vi keybindings
+set -o vi
+
+# Disable beep
+unsetopt BEEP
+
+# ---- history (from https://martinheinz.dev/blog/110) ----
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTIGNORE="(ls|cd|pwd|exit|cd)*"
+
+setopt EXTENDED_HISTORY      # Write history as ':start:elapsed;command'
+setopt INC_APPEND_HISTORY    # Write immediately, not on shell exit
+setopt SHARE_HISTORY         # Share history across sessions
+setopt HIST_IGNORE_DUPS      # Don't record immediately-duplicated commands
+setopt HIST_IGNORE_ALL_DUPS  # Drop older duplicates when a new dup is added
+setopt HIST_IGNORE_SPACE     # Don't record commands starting with a space
+setopt HIST_SAVE_NO_DUPS     # Don't write duplicates to history file
+setopt HIST_VERIFY           # Don't execute immediately upon history expansion
+setopt APPEND_HISTORY        # Append to history file
+setopt HIST_NO_STORE         # Don't store history commands (history expansion cmds)
+setopt HIST_REDUCE_BLANKS    # Trim superfluous blanks
+
+# ---- aliases ----
+alias rm='rm -vi'
+alias grep='grep --color'
+alias ls='eza'
+
+# ---- git aliases ----
+alias gch='git checkout "$(git branch --sort=-committerdate | fzf | tr -d "[:space:]")"'
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias ga='git add '
+alias gau='git add -u'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gcm='git commit -m'
