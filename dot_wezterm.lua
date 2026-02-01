@@ -1,5 +1,12 @@
 local wezterm = require("wezterm")
 
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
+end)
+
 local act = wezterm.action
 
 local config = wezterm.config_builder()
@@ -12,8 +19,8 @@ config.default_cursor_style = "SteadyBar" -- i.e. line not block
 config.leader = { key = "p", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	-- pane splitting
-	{ key = "\\", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "\\", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	-- pane navigation
 	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
 	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
