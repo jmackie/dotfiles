@@ -33,6 +33,7 @@ alias rm='rm -vi'
 alias grep='grep --color'
 alias ls='eza'
 alias ll='eza --long --all --no-permissions --git --header --group-directories-first --no-user --no-time'
+alias y='yazi'
 
 # ---- git aliases ----
 alias gch='git checkout "$(git branch --sort=-committerdate | fzf | tr -d "[:space:]")"'
