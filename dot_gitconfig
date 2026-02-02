@@ -31,5 +31,14 @@
 	shove = push --force-with-lease
 	rebase-onto = !sh -c 'git rebase --onto $1 $(git merge-base $1 $(git rev-parse --abbrev-ref HEAD))' -
 
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
 [delta]
-	enabled = true
+    navigate = true
+
+[merge]
+    conflictStyle = zdiff3
