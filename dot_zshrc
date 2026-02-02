@@ -16,22 +16,23 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTIGNORE="(ls|cd|pwd|exit|cd)*"
 
-setopt EXTENDED_HISTORY      # Write history as ':start:elapsed;command'
-setopt INC_APPEND_HISTORY    # Write immediately, not on shell exit
-setopt SHARE_HISTORY         # Share history across sessions
-setopt HIST_IGNORE_DUPS      # Don't record immediately-duplicated commands
-setopt HIST_IGNORE_ALL_DUPS  # Drop older duplicates when a new dup is added
-setopt HIST_IGNORE_SPACE     # Don't record commands starting with a space
-setopt HIST_SAVE_NO_DUPS     # Don't write duplicates to history file
-setopt HIST_VERIFY           # Don't execute immediately upon history expansion
-setopt APPEND_HISTORY        # Append to history file
-setopt HIST_NO_STORE         # Don't store history commands (history expansion cmds)
-setopt HIST_REDUCE_BLANKS    # Trim superfluous blanks
+setopt EXTENDED_HISTORY     # Write history as ':start:elapsed;command'
+setopt INC_APPEND_HISTORY   # Write immediately, not on shell exit
+setopt SHARE_HISTORY        # Share history across sessions
+setopt HIST_IGNORE_DUPS     # Don't record immediately-duplicated commands
+setopt HIST_IGNORE_ALL_DUPS # Drop older duplicates when a new dup is added
+setopt HIST_IGNORE_SPACE    # Don't record commands starting with a space
+setopt HIST_SAVE_NO_DUPS    # Don't write duplicates to history file
+setopt HIST_VERIFY          # Don't execute immediately upon history expansion
+setopt APPEND_HISTORY       # Append to history file
+setopt HIST_NO_STORE        # Don't store history commands (history expansion cmds)
+setopt HIST_REDUCE_BLANKS   # Trim superfluous blanks
 
 # ---- aliases ----
 alias rm='rm -vi'
 alias grep='grep --color'
 alias ls='eza'
+alias ll='eza --long --all --no-permissions --git --header --group-directories-first --no-user --no-time'
 
 # ---- git aliases ----
 alias gch='git checkout "$(git branch --sort=-committerdate | fzf | tr -d "[:space:]")"'
