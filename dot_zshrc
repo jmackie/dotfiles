@@ -32,6 +32,7 @@ setopt HIST_REDUCE_BLANKS   # Trim superfluous blanks
 alias rm='rm -vi'
 alias grep='grep --color'
 alias ls='eza'
+alias lt='eza --tree'
 alias ll='eza --long --all --no-permissions --git --header --group-directories-first --no-user --no-time'
 alias y='yazi'
 
