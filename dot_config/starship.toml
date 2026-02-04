@@ -28,7 +28,7 @@ trim_at = ".lan"
 disabled = false
 
 [directory]
-style = "black bold"
+style = "bright-black bold"
 truncate_to_repo = false
 disabled = false
 
