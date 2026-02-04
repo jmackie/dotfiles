@@ -1,0 +1,24 @@
+[tools]
+bat = "latest"
+chezmoi = "latest"
+delta = "latest"
+eza = "latest"
+fzf = "latest"
+gh = "latest"
+git-lfs = "latest"
+helix = "latest"
+"npm:bash-language-server" = "latest"
+opencode = "latest"
+ripgrep = "latest"
+sd = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+starship = "latest"
+usql = "latest"
+yazi = "latest"
+
+[settings]
+experimental = true
+
+[env]
+_.path = ["/opt/homebrew/opt/libpq/bin"]
