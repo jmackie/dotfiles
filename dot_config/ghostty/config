@@ -5,8 +5,10 @@ font-family = JetBrains Mono
 cursor-style = bar
 background-opacity = 0.85
 window-padding-x = 10,10
+window-padding-y = 0,10
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
+maximize = true
 
 keybind = ctrl+p>backslash=new_split:right
 keybind = ctrl+p>-=new_split:down
