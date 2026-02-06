@@ -2,11 +2,13 @@
 bat = "latest"
 chezmoi = "latest"
 delta = "latest"
+doppler = "latest"
 eza = "latest"
 fzf = "latest"
 gh = "latest"
 git-lfs = "latest"
 helix = "latest"
+node = "latest"
 "npm:bash-language-server" = "latest"
 opencode = "latest"
 ripgrep = "latest"
@@ -21,4 +23,5 @@ yazi = "latest"
 experimental = true
 
 [env]
+# `brew install libpq` for psql without full Postgres
 _.path = ["/opt/homebrew/opt/libpq/bin"]
