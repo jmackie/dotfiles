@@ -3,6 +3,9 @@ eval "$(starship init zsh)"
 source <(fzf --zsh)
 
 export EDITOR=hx
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd --type f'
+export LESS='-SR'
 
 # vi keybindings
 set -o vi
